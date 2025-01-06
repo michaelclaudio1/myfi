@@ -57,7 +57,7 @@ function CreateCategoryDialog({ type, successCallback }: Props) {
   });
 
   const queryClient = useQueryClient();
-  const theme = useTheme();
+  const theme = useTheme().resolvedTheme;
 
   const { mutate, isPending } = useMutation({
     mutationFn: CreateCategory,
@@ -181,7 +181,7 @@ function CreateCategoryDialog({ type, successCallback }: Props) {
                           onEmojiClick={(emoji) => {
                             field.onChange(emoji.emoji);
                           }}
-                          theme={theme.resolvedTheme}
+                          theme={theme}
                         />
                       </PopoverContent>
                     </Popover>
