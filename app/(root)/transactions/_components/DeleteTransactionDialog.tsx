@@ -3,10 +3,8 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { toast } from "sonner";
-import { DeleteCategory } from "../../dashboard/_actions/categories";
 import {
   AlertDialog,
-  AlertDialogTrigger,
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogTitle,
