@@ -35,7 +35,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleOff, Loader2, PlusSquare } from "lucide-react";
 import React, { ReactNode, useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { Theme } from "emoji-picker-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { CreateCategory } from "../_actions/categories";
 import { Category } from "@prisma/client";
@@ -186,7 +186,7 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                           onEmojiClick={(emoji) => {
                             field.onChange(emoji.emoji);
                           }}
-                          theme={theme}
+                          theme={theme as Theme}
                         />
                       </PopoverContent>
                     </Popover>
