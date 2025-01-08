@@ -112,7 +112,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            Create a new{" "}
+            Create a new
             <span
               className={cn(
                 "m-1",
@@ -124,8 +124,8 @@ function CreateTransactionDialog({ trigger, type }: Props) {
             transaction
           </DialogTitle>
         </DialogHeader>
-        <Form {...form} onSubmit={form.handleSubmit(onSubmit)}>
-          <form className="space-y-4">
+        <Form {...form}>
+          <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
               control={form.control}
               name="description"
