@@ -25,6 +25,7 @@ const items = [
   { label: "Recurring", link: "/recurring " },
   { label: "Spending", link: "/spending" },
   { label: "Transactions", link: "/transactions" },
+  { label: "Manage", link: "/manage" },
   { label: "Settings", link: "/settings" },
 ];
 
