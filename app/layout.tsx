@@ -26,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider afterSignOutUrl={"/sign-in"}>
+    <ClerkProvider
+      afterMultiSessionSingleSignOutUrl={"/sign-in"}
+      afterSignOutUrl={"/sign-in"}
+    >
       <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
