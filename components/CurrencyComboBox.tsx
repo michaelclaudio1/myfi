@@ -22,7 +22,7 @@ import { Currencies, Currency } from "@/lib/currencies";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import SkeletonWrapper from "./SkeletonWrapper";
 import { UserSettings } from "@prisma/client";
-import { UpdateUserCurrency } from "@/app/(root)/wizard/_actions/userSettings";
+import { UpdateUserCurrency } from "@/app/wizard/_actions/userSettings";
 import { toast } from "sonner";
 
 export function CurrencyComboBox() {
