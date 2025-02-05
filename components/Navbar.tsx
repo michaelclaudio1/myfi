@@ -22,11 +22,11 @@ function Navbar() {
 
 const items = [
   { label: "Dashboard", link: "/dashboard" },
-  { label: "Recurring", link: "/recurring " },
-  { label: "Spending", link: "/spending" },
+  // { label: "Recurring", link: "/recurring " },
+  // { label: "Spending", link: "/spending" },
   { label: "Transactions", link: "/transactions" },
   { label: "Manage", link: "/manage" },
-  { label: "Settings", link: "/settings" },
+  // { label: "Settings", link: "/settings" },
 ];
 
 function DesktopNavbar() {

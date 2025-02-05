@@ -33,7 +33,7 @@ function CategoryPicker({ type, onChange }: Props) {
 
   useEffect(() => {
     if (!value) return;
-    onChange(value); //when value changes, onChange callback is called
+    onChange(value); // when value changes, onChange callback is called
   }, [onChange, value]);
 
   const categoriesQuery = useQuery({
@@ -46,6 +46,7 @@ function CategoryPicker({ type, onChange }: Props) {
     (category: Category) => category.name === value
   );
 
+  // going to be passed to the catagory creation dialog
   const successCallback = useCallback(
     (category: Category) => {
       setValue(category.name);

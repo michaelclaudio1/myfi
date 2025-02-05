@@ -14,7 +14,7 @@ const getHistoryDataSchema = z.object({
 export async function GET(request: Request) {
   const user = await currentUser();
   if (!user) {
-    redirect("/sing-in");
+    redirect("/sign-in");
   }
 
   const { searchParams } = new URL(request.url);

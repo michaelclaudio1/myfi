@@ -25,6 +25,7 @@ function DeleteTransactionDialog({ open, setOpen, transactionId }: Props) {
   const queryClient = useQueryClient();
   const deleteMutation = useMutation({
     mutationFn: DeleteTransaction,
+    // do some digging to figure out why this has to be async
     onSuccess: async () => {
       toast.success("Transaction deleted successfully!", {
         id: transactionId,

@@ -20,6 +20,9 @@ import { cn } from "@/lib/utils";
 import { Category } from "@prisma/client";
 import DeleteCategoryDialog from "../dashboard/_components/DeleteCategoryDialog";
 
+// The currency section of this will be removed when Plaid is implemented.
+// maybe just comment out the code for now, multiple currencies is a cool
+// functionality but not necessary right now
 function page() {
   return (
     <>

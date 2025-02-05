@@ -51,6 +51,7 @@ interface Props {
 
 function CreateTransactionDialog({ trigger, type }: Props) {
   const form = useForm<CreateTransactionSchemaType>({
+    // Zod being used to validate user input
     resolver: zodResolver(CreateTransactionSchema),
     defaultValues: {
       type,
@@ -59,6 +60,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
   });
   const [open, setOpen] = useState(false);
 
+  // remember: use useCallback when passing function as a prop
   const handleCategoryChange = useCallback(
     (value: string) => {
       form.setValue("category", value);
@@ -68,6 +70,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
 
   const queryClient = useQueryClient();
 
+  // useMutation for Create/Update/Delete, useQuery for Read
   const { mutate, isPending } = useMutation({
     mutationFn: CreateTransaction,
     onSuccess: () => {
@@ -83,7 +86,16 @@ function CreateTransactionDialog({ trigger, type }: Props) {
         category: undefined,
       });
 
-      // After creating a transaction, we need to (in?)validate the overview query which will refetch data in the homepage
+      // After creating a transaction, we need to (in?)validate the
+      // overview query which will refetch data in the homepage
+      //
+      // This is b/c the user will make an action (creating a transaction),
+      // and the data on the dashboard will be out of date. So this function
+      // refetches it.
+      //
+      // interestingly, this doesn't actually work without a refresh (the
+      // transaction doesn't show in the overview, but does in the history
+      // section) if the transaction is selected for the current day.
       queryClient.invalidateQueries({
         queryKey: ["overview"],
       });
@@ -98,6 +110,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
         id: "create-transaction",
       });
 
+      // calling the mutation function to create a transaction
       mutate({
         ...values,
         date: DateToUTCDate(values.date),

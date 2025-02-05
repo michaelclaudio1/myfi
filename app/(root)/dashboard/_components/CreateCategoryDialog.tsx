@@ -62,6 +62,8 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
 
   const { mutate, isPending } = useMutation({
     mutationFn: CreateCategory,
+    // this is async because it calls the callback func?
+    // do some more digging to understand why this has to be async
     onSuccess: async (data: Category) => {
       form.reset({
         name: "",

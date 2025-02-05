@@ -1,18 +1,21 @@
 TO DO LIST:
  - Incorporate Plaid
- - update the wizard page to incorporate Plaid
- - store Plaid information somehow, then generate financial data once user is logged in.
+   - update the wizard page to incorporate Plaid
+   - store Plaid information somehow, then generate financial data once user is logged in.
 
 BUG LIST: 
- - Sign out not currently redirecting to the sign-in page
  - Fix light mode CSS (just doesn't look good, probably an easy way to do this with Tailwind)
  - some issues with adding something new (an income or expense) and reloading the page to immediately show the addition
-    - It appears that the issue is only when something new (an income or expense) is added for today, any other time it works correctly
-    - This also won't be a bug once Plaid is implemented, as this functionality will not exist.
+   - It appears that the issue is only when something new (an income or expense) is added for today, any other time it works correctly
+   - This also won't be a bug once Plaid is implemented, as this functionality will not exist.
  - scrolling the page when a modal is open
+ - the emoji picker being outside of the users' view, goes with the previous bug
+
 
 WISH LIST:
   * This is a list of features/changes/implementations that I would like to add. Not critical to functionality,
   * but would enhance UX.
  - Root opening page, where users don't have to be signed in to see what the website is about
  - Automatically change DBs when working locally or on production
+   - I had to switch from sqlite to postgresql, and now I have to reset the Prisma dev.db file everytime I switch from 
+   - local to production code. Probably can be solved with a simple script

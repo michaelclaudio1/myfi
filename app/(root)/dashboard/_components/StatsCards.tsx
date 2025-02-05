@@ -25,6 +25,8 @@ function StatsCards({ from, to, userSettings }: Props) {
       ).then((res) => res.json()),
   });
 
+  // This is here as a temporary functionality, when Plaid is implemented
+  // this will be removed
   const formatter = useMemo(() => {
     return GetFormatterForCurrency(userSettings.currency);
   }, [userSettings.currency]);
@@ -83,6 +85,7 @@ function StatCard({
   title: string;
   value: number;
 }) {
+  // from documentation
   const formatFn = useCallback(
     (value: number) => {
       return formatter.format(value);

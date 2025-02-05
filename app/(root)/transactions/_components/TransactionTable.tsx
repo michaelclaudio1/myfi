@@ -45,6 +45,10 @@ interface Props {
   to: Date;
 }
 
+/*  PRETTY MUCH ALL OF THIS CODE WAS FROM DOCUMENTATION.
+    UNDERSTAND THAT, IF I HAD TO REPRODUCE THIS, I WOULDN'T
+    BE ABLE TO W/O LOOKING AT THE REACT-TABLE DOCS  */
+
 const emptyData: never[] = [];
 type TransactionHistoryRow = GetTransactionsHistoryResponseType[0];
 const columns: ColumnDef<TransactionHistoryRow>[] = [
@@ -72,6 +76,7 @@ const columns: ColumnDef<TransactionHistoryRow>[] = [
       <div className="capitalize">{row.original.description}</div>
     ),
   },
+  // Add a filterFn to this in the future
   {
     accessorKey: "date",
     header: "Date",

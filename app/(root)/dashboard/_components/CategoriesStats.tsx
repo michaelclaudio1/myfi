@@ -28,6 +28,8 @@ function CategoriesStats({ from, to, userSettings }: Props) {
       ).then((res) => res.json()),
   });
 
+  // This is here as a temporary functionality, when Plaid is implemented
+  // this will be removed
   const formatter = useMemo(() => {
     return GetFormatterForCurrency(userSettings.currency);
   }, [userSettings.currency]);
@@ -61,6 +63,7 @@ function CategoriesCard({
   formatter: Intl.NumberFormat;
   data: GetCategoriesStatsResponseType;
 }) {
+  // splitting data into income/expense then summing the totals
   const filteredData = data.filter((el) => el.type === type);
   const total = filteredData.reduce(
     (acc, el) => acc + (el._sum?.amount || 0),

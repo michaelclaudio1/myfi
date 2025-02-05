@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Consider removing this completely, not entirely necessary
 export function ThemeSwitcherButton() {
   const { setTheme } = useTheme();
 

@@ -28,6 +28,8 @@ function History({ userSettings }: { userSettings: UserSettings }) {
     year: new Date().getFullYear(),
   });
 
+  // This is here as a temporary functionality, when Plaid is implemented
+  // this will be removed
   const formatter = useMemo(() => {
     return GetFormatterForCurrency(userSettings.currency);
   }, [userSettings.currency]);
@@ -76,6 +78,8 @@ function History({ userSettings }: { userSettings: UserSettings }) {
         <CardContent>
           <SkeletonWrapper isLoading={historyDataQuery.isFetching}>
             {dataAvailable && (
+              // This is from documentation, its a little confusing but
+              // it works
               <ResponsiveContainer width={"100%"} height={300}>
                 <BarChart
                   height={300}
